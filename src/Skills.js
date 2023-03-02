@@ -4,7 +4,7 @@ const Skills = () => {
   return (
     <div className='skills'>
       <div className='stitle'>
-        <h1>Skils</h1>
+        <h1>Skills</h1>
       </div>
       <div>
         <div>

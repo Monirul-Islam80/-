@@ -84,7 +84,6 @@ const HeroSection = () => {
 
     return (
         <>
-            <div className='alert'> <h1>Under Development ⛑️⛑️⛑️⛑️</h1></div>
             <div className='herosec'>
 
 

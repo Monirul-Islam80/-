@@ -18,7 +18,7 @@ const About = () => {
         }
     });
     useEffect(() => {
-        z.current.style.opacity = `${-opacity * 5}%`
+        z.current.style.opacity = `${-opacity * 7}%`
 
     }, [opacity])
 

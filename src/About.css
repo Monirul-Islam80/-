@@ -1,10 +1,13 @@
 .about_container {
-    width: 100vw;
+    /* width: 100vw; */
     height: 80vh;
     display: flex;
     flex-direction: row-reverse;
     padding: 0 50px;
-
+    background-color: #323445;
+    margin: 0 10%;
+    padding: 5% 5%;
+    box-shadow: 0px 0px 20px 16px #0000005e;
 }
 
 .about_container>div {

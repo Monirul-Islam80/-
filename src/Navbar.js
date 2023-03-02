@@ -5,11 +5,13 @@ function Navbar() {
         <nav>
             <div className='nav'>
                 <ul className='linklist'>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Skills</li>
-                    <li>Demo</li>
-                    <li>Contact</li>
+
+                    <a href="#home"> <li>Home</li>  </a>
+                    <a href="#about"> <li>About</li>  </a>
+                    <a href="#skills"> <li>Skills</li>  </a>
+                    <a href="#demo"> <li>Demo</li>  </a>
+                    <a href="#contact"> <li>Contact</li>  </a>
+
                 </ul>
             </div>
 

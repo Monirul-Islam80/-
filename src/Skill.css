@@ -40,15 +40,17 @@
 
 
 .ss:hover .scard {
+    color: black;
     transform: rotateY(180deg);
     background-color: white;
-    color: black;
+
+    border: 2px solid rgb(0, 0, 0);
 }
 
 
 
 .ss:hover .sdet {
-    transition-delay: 50ms;
+
     display: flex;
     transform: rotateY(180deg);
 

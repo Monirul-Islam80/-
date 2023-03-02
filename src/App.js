@@ -2,6 +2,7 @@ import About from "./About";
 import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
 import Skills from "./Skills";
+import Work from "./Work";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <HeroSection />
       <About />
       <Skills />
+      <Work />
     </div>
   );
 }
