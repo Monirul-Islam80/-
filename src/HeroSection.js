@@ -35,6 +35,7 @@ import hpic19 from './images/19362653-ai (19).png'
 import hpic20 from './images/19362653-ai (20).png'
 import hpic21 from './images/19362653-ai(22).png'
 const HeroSection = () => {
+    const [position, setposition] = useState(false);
     const [postonx, setpostonx] = useState(0);
     const arr = [hpic18, hpic1,
         hpic2,
@@ -59,32 +60,26 @@ const HeroSection = () => {
     ]
     let x = useRef();
     let y = useRef();
+    let hsection = useRef();
     window.addEventListener("wheel", (e) => {
         if (e.deltaY < 0) {
             if (postonx <= 0) {
                 setpostonx(postonx + 1);
             }
-
-
-
-
         } else if (e.deltaY > 0) {
             setpostonx(postonx - 1);
         }
     });
 
-
     useEffect(() => {
         y.current.style.transform = `translateX(${-postonx * 20}px)`;
         x.current.style.transform = `translateX(${postonx * 20}px)`;
-
-
 
     }, [postonx])
 
     return (
         <>
-            <div className='herosec'>
+            <div className='herosec' ref={hsection}>
 
 
                 <div className='sec1' ref={x}>
