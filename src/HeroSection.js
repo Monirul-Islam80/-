@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
  
-import './herosection.css'
+import './styles/herosection.css'
 // import i1 from './images/1.png'
 // import i2 from './images/2.png'
 // import i3 from './images/3.png'

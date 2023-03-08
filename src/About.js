@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './About.css'
+import './styles/About.css'
 import img2 from './images/Untitleddesign.png'
 const About = () => {
     const z = useRef();
