@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Animation from './Animation'
+ 
 import './herosection.css'
 // import i1 from './images/1.png'
 // import i2 from './images/2.png'
