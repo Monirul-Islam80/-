@@ -79,7 +79,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div className='herosec' ref={hsection}>
+            <div id='home' className='herosec' ref={hsection}>
 
 
                 <div className='sec1' ref={x}>

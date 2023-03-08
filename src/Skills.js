@@ -24,7 +24,7 @@ const Skills = () => {
 }
 const Card = ({ name, stitle, skills }) => {
   return (
-    <div className='ss'>
+    <div className='ss' id='skills'>
       <div className='scard'>
         <div className='sname'>
           <h1>{name}</h1><h1> {stitle}</h1>

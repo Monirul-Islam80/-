@@ -1,9 +1,13 @@
 import React from 'react'
 import './styles/nav.css'
+import logo from './images/2.png'
 function Navbar() {
     return (
         <nav>
             <div className='nav'>
+        <div>
+            <img src={logo} alt="logo" width={'100px'}/>
+        </div>
                 <ul className='linklist'>
 
                     <a href="#home"> <li>Home</li>  </a>
