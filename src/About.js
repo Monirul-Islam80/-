@@ -4,22 +4,29 @@ import img2 from './images/Untitleddesign.png'
 const About = () => {
     const z = useRef();
     const [opacity, setopacity] = useState(0)
-    window.addEventListener("wheel", (e) => {
-        if (e.deltaY < 0) {
-            if (opacity <= 0) {
-                setopacity(opacity + 1);
-            }
+    // window.addEventListener("wheel", (e) => {
+    //     if (e.deltaY < 0) {
+    //         if (opacity <= 0) {
+    //             setopacity(opacity + 1);
+    //         }
 
 
 
 
-        } else if (e.deltaY > 0) {
-            setopacity(opacity - 1);
-        }
-    });
+    //     } else if (e.deltaY > 0) {
+    //         setopacity(opacity - 1);
+    //     }
+    // });
     useEffect(() => {
-        z.current.style.opacity = `${-opacity * 7}%`
 
+        window.addEventListener("scroll",()=>{
+
+
+            var windowHeight = window.innerHeight;
+            var revleTop = z.current.getBoundingClientRect().top;
+        z.current.style.opacity = `${(windowHeight - revleTop -1)*20/100}%`
+           
+         })
     }, [opacity])
 
     return (
@@ -49,7 +56,12 @@ const About = () => {
 
             </div>
 
-
+            <div className='contactlist'>
+                <div className='i1'><a href='https://www.linkedin.com/in/monirul-islam-soumik'><i className="fa-brands fa-linkedin"></i></a></div>
+                <div className='i2'><a href='https://github.com/Monirul-Islam80'><i className="fa-brands fa-square-github"></i></a></div>
+                <div className='i3'><a href=''><i className="fa-brands fa-square-facebook"></i></a></div>
+                <div className='i4'><a href=''><i className="fa-solid fa-square-envelope"></i></a></div>
+            </div>
         </>
     )
 }

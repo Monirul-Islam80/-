@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="This is a parsonel website belongs to Monirul " />
-
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/android-chrome-512x512.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/android-chrome-192x192.png">
+  <link rel="manifest" href="/favicon_io/site.webmanifest">
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -36,10 +39,9 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-</body>
-<script>
-
-  document.addEventListener('mousemove', parallax);
+    <!-- <script>
+window.onload= console.log(document.querySelector('#home'));
+  document.getElementById('home').addEventListener('mousemove', parallax);
   function parallax(e) {
     this.querySelectorAll('.layer').forEach(layer => {
       const speed = layer.getAttribute('data-speed');
@@ -50,6 +52,8 @@
     });
 
   }
-</script>
+</script> -->
+</body>
+
 
 </html>

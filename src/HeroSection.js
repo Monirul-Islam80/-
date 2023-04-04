@@ -61,22 +61,46 @@ const HeroSection = () => {
     let x = useRef();
     let y = useRef();
     let hsection = useRef();
-    window.addEventListener("wheel", (e) => {
-        if (e.deltaY < 0) {
-            if (postonx <= 0) {
-                setpostonx(postonx + 1);
-            }
-        } else if (e.deltaY > 0) {
-            setpostonx(postonx - 1);
-        }
-    });
+    // window.addEventListener("wheel", (e) => {
+    //     if (e.deltaY < 0) {
+    //         if (postonx <= 0) {
+    //             setpostonx(postonx + 1);
+    //         }
+    //     } else if (e.deltaY > 0) {
+    //         setpostonx(postonx - 1);
+    //     }
+    // });
 
     useEffect(() => {
-        y.current.style.transform = `translateX(${-postonx * 20}px)`;
-        x.current.style.transform = `translateX(${postonx * 20}px)`;
+        // y.current.style.transform = `translateX(${-postonx * 20}px)`;
+        // x.current.style.transform = `translateX(${postonx * 20}px)`;
+        window.addEventListener("scroll",()=>{
 
+
+            var windowHeight = window.innerHeight;
+            var revleTop = x.current.getBoundingClientRect().top;
+
+            var revealPoint = windowHeight/2+10;
+            if (-revleTop>revealPoint) {
+                x.current.classList.add("active");
+            }else{
+                x.current.classList.remove("active");
+                
+            }
+         })
+    document.getElementById('home').addEventListener('mousemove', parallax);
     }, [postonx])
 
+    function parallax(e) {
+      this.querySelectorAll('.layer').forEach(layer => {
+        const speed = layer.getAttribute('data-speed');
+        const x = (window.innerWidth - e.pageX * speed) / 100
+        const y = (window.innerHeight - e.pageY * speed) / 100
+        layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+  
+      });
+  
+    }
     return (
         <>
             <div id='home' className='herosec' ref={hsection}>
@@ -88,8 +112,9 @@ const HeroSection = () => {
                         <p className='hello'>
                             <span style={{ color: '#ffd700' }}>{"{"}</span> Hello,
                         </p>
-                        <p className='prename'>I am <span className='name'>Monirul Islam Soumik</span></p>
+                        <p className='prename'>I <span className='am'>am</span> <span className='name'>Monirul Islam Soumik</span></p>
                         <p className='title'>"I make things for the web!"     <span style={{ color: '#ffd700' }}>{"}"}</span></p>
+<a className='download' href='.\images\monirulsCV3-12.pdf' download><button>Download CV<i className="fa-solid fa-download"></i></button></a>
                     </div>
                 </div>
                 <div className='sec2' ref={y}>
@@ -116,7 +141,10 @@ const HeroSection = () => {
 
 
                 </div>
-            </div>        </>
+            </div>      
+            
+   
+              </>
     )
 }
 

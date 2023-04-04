@@ -1,3 +1,6 @@
+.active{
+    transform: translateX(-150px);
+}
 .herosec {
     display: flex;
     align-items: center;
@@ -33,7 +36,7 @@
     font-size: 40px;
     padding-left: 30px;
 
-
+transition: all ease 5ms;
 
 
 }
@@ -51,7 +54,9 @@
     color: #f60febcc;
     text-shadow: 2px 2px #ff0000;
 }
-
+.am{
+    color: white;
+}
 .prename {
     color: #3793fb;
 }
@@ -69,5 +74,39 @@
 
 .sec2>img {
     position: absolute;
+
+}
+
+.fa-linkedin{
+    color: #0a66c2 !important;
+}
+.fa-square-facebook{
+    color: #1877f2 !important;
+}
+.fa-square-envelope{
+    color: #c61f1a !important;
+}
+
+.download{
+    text-decoration: none;
+}
+.download>button{
+    background-color: #1177bb;
+    color: white;
+    padding: 10px 10px;
+    border: transparent;
+    outline: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+.download>button:hover{
+    background-color: #17a2ff;
+}
+.download>button>i{
+    
+    border-left: 2px solid white;
+    padding-left: 9px;
+    margin-left: 9px;
 
 }

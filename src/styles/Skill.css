@@ -68,7 +68,10 @@
     display: none;
 }
 
-
+.sname>i{
+    font-size: 25px;
+    color: black;
+}
 
 .sdet {
     display: none;

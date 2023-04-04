@@ -8,12 +8,12 @@ const Skills = () => {
       </div>
       <div>
         <div>
-          <Card name={'Frontend'} stitle={'Web Development'} skills={['HTML', 'CSS', 'JavaScript', 'React']} />
-          <Card name={'Backend'} stitle={'Web Development'} skills={['NodeJS', 'ExpressJS', 'MongoDB', 'FireBase']} />
+          <Card name={'Frontend'} stitle={'Web Development'} logo={"fa-solid fa-code fa-bounce"} skills={['HTML', 'CSS', 'JavaScript', 'React']} />
+          <Card name={'Backend'} stitle={'Web Development'} logo={"fa-solid fa-server fa-bounce"} skills={['NodeJS', 'ExpressJS', 'MongoDB', 'FireBase']} />
         </div>
         <div>
-          <Card name={'Android-app'} stitle={' Development'} skills={['React-Native', 'Expo',]} />
-          <Card name={'Others'} stitle={'Skills'} skills={['C', 'Python', 'Java', 'Test-automation', 'Selenium', 'Testng']} />
+          <Card name={'Android-app'} stitle={' Development'} logo={"fa-solid fa-mobile-screen-button fa-bounce"} skills={['React-Native', 'Expo',]} />
+          <Card name={'Others'} stitle={'Skills'} logo={"fa-solid fa-database fa-bounce"} skills={['C', 'Python', 'Java', 'Test-automation', 'Selenium', 'Testng']} />
         </div>
       </div>
 
@@ -22,11 +22,12 @@ const Skills = () => {
     </div>
   )
 }
-const Card = ({ name, stitle, skills }) => {
+const Card = ({ name, stitle, logo, skills }) => {
   return (
     <div className='ss' id='skills'>
       <div className='scard'>
         <div className='sname'>
+        <i className={logo}></i>
           <h1>{name}</h1><h1> {stitle}</h1>
         </div>
         <div className='sdet'>
