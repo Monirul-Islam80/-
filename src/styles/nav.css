@@ -85,6 +85,9 @@ nav {
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
 }
+.soclogo {
+  display: none;
+}
 @media screen and (max-width: 1000px) {
   .cont {
     display: inline-block !important;
