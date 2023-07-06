@@ -1,76 +1,115 @@
 .works {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-    background-color: rgba(192, 214, 214, 0.462);
-    padding-top: 20px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: rgba(192, 214, 214, 0.462);
+  padding-top: 20px;
 }
 
-.works>h2 {
-    padding: 10px;
-    border: 1px solid white;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: none;
-    animation-name: borderanima;
+.works > h2 {
+  padding: 10px;
+  border: 1px solid white;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-name: borderanima;
 }
 
 @keyframes borderanima {
-    0% {
-        border-top: 2px solid rgba(0, 0, 0, 0.564);
-        border-bottom: 2px solid rgba(0, 0, 0, 0.26);
-        border-left: 2px solid rgb(0, 0, 0);
-        border-right: 2px solid rgba(7, 7, 7, 0.795);
-    }
+  0% {
+    border-top: 2px solid rgba(0, 0, 0, 0.564);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.26);
+    border-left: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid rgba(7, 7, 7, 0.795);
+  }
 
-    50% {
-        border-top: 2px solid rgba(0, 0, 0, 0.26);
-        border-bottom: 2px solid rgb(0, 0, 0);
-        border-left: 2px solid rgba(7, 7, 7, 0.795);
-        border-right: 2px solid rgba(0, 0, 0, 0.564);
-    }
+  50% {
+    border-top: 2px solid rgba(0, 0, 0, 0.26);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    border-left: 2px solid rgba(7, 7, 7, 0.795);
+    border-right: 2px solid rgba(0, 0, 0, 0.564);
+  }
 
-    100% {
-        border-top: 2px solid rgb(0, 0, 0);
-        border-bottom: 2px solid rgba(7, 7, 7, 0.795);
-        border-left: 2px solid rgba(0, 0, 0, 0.564);
-        border-right: 2px solid rgba(0, 0, 0, 0.26);
-    }
+  100% {
+    border-top: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgba(7, 7, 7, 0.795);
+    border-left: 2px solid rgba(0, 0, 0, 0.564);
+    border-right: 2px solid rgba(0, 0, 0, 0.26);
+  }
 }
 
 .work {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-wrap: wrap; */
-    overflow-y: hidden;
-    overflow-x: auto;
-    flex: 50%;
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .webs {
-    width: fit-content;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    transition: all 0.5s;
-    border: 1px solid rgba(0, 0, 0, 0);
-
+  margin: 20px;
+  display: flex;
+  padding: 10px;
+  transition: all 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .webs:hover {
-    border: 1px solid black;
+  border: 1px solid black;
+}
+.webs img {
+  width: 100%;
+}
+.webs > a {
+  color: black;
+  font-weight: bold;
+}
+.webs {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 2%;
 }
 
-.webs>a {
-    color: black;
-    font-weight: bold;
+.webs img {
+  transition: transform 0.5s ease;
+}
+
+.webs:hover img {
+  animation: scaleUp 0.5s forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.webs:not(:hover) img {
+  animation: scaleDown 0.5s forwards;
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .webs {
+    width: 85%;
+  }
 }

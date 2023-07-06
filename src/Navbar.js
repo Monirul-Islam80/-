@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./styles/nav.css";
 import logo from "./images/2croped.png";
-function Navbar() {
+function Navbar({ animateComponents }) {
   const x = useRef();
   const y = useRef();
+  const z = useRef();
   const [state, setstate] = useState(true);
   function myFunction() {
     if (state) {
@@ -15,10 +16,13 @@ function Navbar() {
       y.current.classList.toggle("antinavanimation");
     }
   }
+  useEffect(() => {
+    animateComponents(z, "component");
+  }, [animateComponents]);
 
   return (
     <nav>
-      <div className="nav">
+      <div className="nav" ref={z}>
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
@@ -30,23 +34,23 @@ function Navbar() {
         <ul className="linklist" ref={y}>
           <a href="#home">
             {" "}
-            <li>Home</li>{" "}
+            <li className="n_home">Home</li>{" "}
           </a>
           <a href="#about">
             {" "}
-            <li>About</li>{" "}
+            <li className="n_about">About</li>{" "}
           </a>
           <a href="#skills">
             {" "}
-            <li>Skills</li>{" "}
+            <li className="n_skills">Skills</li>{" "}
           </a>
           <a href="#damo">
             {" "}
-            <li>Demo</li>{" "}
+            <li className="n_damo">Demo</li>{" "}
           </a>
           <a href="#contact">
             {" "}
-            <li>Contact</li>{" "}
+            <li className="n_contact">Contact</li>{" "}
           </a>
           <div className="soclogo">
             <div className="i1">
@@ -60,12 +64,12 @@ function Navbar() {
               </a>
             </div>
             <div className="i3">
-              <a href="#a">
+              <a href="https://web.facebook.com/monirul.islam.soumik">
                 <i className="fa-brands fa-square-facebook"></i>
               </a>
             </div>
             <div className="i4">
-              <a href="#a">
+              <a href="mailto:monirulislam49007@gmail.com">
                 <i className="fa-solid fa-square-envelope"></i>
               </a>
             </div>

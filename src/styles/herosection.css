@@ -2,7 +2,7 @@
   transform: translateX(-150px);
 }
 .herosec {
-  background-image: url("../images/bg-m.jpeg");
+  background-color: black;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -30,6 +30,43 @@
   height: 100%;
 }
 
+.profassion::after {
+  content: "";
+
+  animation: changename 15s ease infinite forwards;
+}
+@keyframes changename {
+  0% {
+    content: "";
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+
+    content: "Full_Stack_Developer";
+  }
+  30% {
+    content: "";
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+
+    content: "MERN_Stack_Developer";
+  }
+  60% {
+    content: "";
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+    content: "Web_Developer";
+  }
+  100% {
+    content: "";
+    opacity: 0;
+  }
+}
 .sec1 {
   display: flex;
   align-items: center;

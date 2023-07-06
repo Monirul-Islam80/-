@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./styles/herosection.css";
 // import i1 from './images/1.png'
@@ -34,7 +34,8 @@ import hpic17 from "./images/19362653-ai (17).png";
 import hpic18 from "./images/19362653-ai (18).png";
 import hpic19 from "./images/19362653-ai (19).png";
 import hpic21 from "./images/19362653-ai(22).png";
-const HeroSection = () => {
+import cvfile from "./images/monirulsCV3-12.pdf";
+const HeroSection = ({ isActive, animateComponents }) => {
   const arr = [
     hpic18,
     hpic1,
@@ -60,7 +61,11 @@ const HeroSection = () => {
   ];
   let x = useRef();
   let y = useRef();
+  let a = useRef();
+
   let hsection = useRef();
+
+  // var middleThreshold = false;
   // window.addEventListener("wheel", (e) => {
   //     if (e.deltaY < 0) {
   //         if (postonx <= 0) {
@@ -72,13 +77,31 @@ const HeroSection = () => {
   // });
 
   useEffect(() => {
+    // if (called > window.innerHeight / 2) {
+    //   // Perform the action when scrolled to the middle
+    //   if (!middleThreshold && called < window.innerHeight / 2 + 10) {
+    //     // a.current.scrollIntoView({ behavior: "smooth" });
+    //     // middleThreshold = true;
+    //     // console.log(middleThreshold);
+    //     window.location.href = "/#about";
+    //   }
+    //   console.log(
+    //     "Scrolled to the middle of the page!",
+
+    //     called
+    //   );
+    // }
     // y.current.style.transform = `translateX(${-postonx * 20}px)`;
     // x.current.style.transform = `translateX(${postonx * 20}px)`;
     window.addEventListener("scroll", () => {
-      var windowHeight = window.innerHeight;
       var revleTop = x.current.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
 
+      // if (!(window.scrolly > windowHeight / 2)) {
+      //   setcalled(window.scrollY);
+      // }
       var revealPoint = windowHeight / 2 + 10;
+
       if (-revleTop > revealPoint) {
         x.current.classList.add("active");
       } else {
@@ -87,7 +110,15 @@ const HeroSection = () => {
     });
     document.getElementById("home").addEventListener("mousemove", parallax);
   }, []);
-
+  useEffect(() => {
+    document.getElementById("home").addEventListener("mouseover", () => {
+      isActive("n_home");
+    });
+  }, [isActive]);
+  useEffect(() => {
+    animateComponents(hsection, "component2");
+    animateComponents(y, "component3");
+  }, [animateComponents]);
   function parallax(e) {
     this.querySelectorAll(".layer").forEach((layer) => {
       const speed = layer.getAttribute("data-speed");
@@ -112,7 +143,14 @@ const HeroSection = () => {
               "I make things for the web!"{" "}
               <span style={{ color: "#ffd700" }}>{"}"}</span>
             </p>
-            <a className="download" href=".\images\monirulsCV3-12.pdf" download>
+            <p>
+              <span style={{ color: "#376489" }}>I</span>{" "}
+              <span style={{ color: "white" }}>am</span>{" "}
+              <span style={{ color: "#dcdcaa" }}>a</span> {"<"}
+              <span className="profassion" style={{ color: "#3bc9b0" }}></span>
+              {"/>"}
+            </p>
+            <a className="download" href={cvfile} download>
               <button>
                 Download CV<i className="fa-solid fa-download"></i>
               </button>
@@ -133,6 +171,7 @@ const HeroSection = () => {
           ))}
         </div>
       </div>
+      <span id="about" ref={a}></span>
     </>
   );
 };

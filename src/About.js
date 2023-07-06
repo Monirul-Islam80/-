@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./styles/About.css";
-import img2 from "./images/Untitleddesign.png";
-const About = () => {
+
+const About = ({ isActive }) => {
   const z = useRef();
+  const x = useRef();
+  const [isScrollTriggered, setIsScrollTriggered] = useState(false);
+
   // window.addEventListener("wheel", (e) => {
   //     if (e.deltaY < 0) {
   //         if (opacity <= 0) {
@@ -13,7 +16,21 @@ const About = () => {
   //         setopacity(opacity - 1);
   //     }
   // });
+  const [text, setText] = useState("");
+  const textWithHTML = `  <p>> Hi,</p>
+  <p>> This is Monirul Islam Soumik</p>
+  <p>> I am a Student, Full-Stack Web Developer and Freelancer.</p>
+  <p>> I can do Frontend, Backend and Database work.</p>
+  <p>> Currently Working and Learning diffrent things</p>
+  <p>> on Web Development and Software Development.</p>`; // Text with HTML tags
+  const typingSpeed = 100; // Speed of typing in milliseconds
   useEffect(() => {
+    document.getElementById("inAbout").addEventListener("mouseover", () => {
+      isActive("n_about");
+    });
+  }, [isActive]);
+  useEffect(() => {
+    console.log(z.current.getBoundingClientRect().top);
     window.addEventListener("scroll", () => {
       var windowHeight = window.innerHeight;
       var revleTop = z.current.getBoundingClientRect().top;
@@ -21,26 +38,45 @@ const About = () => {
         ((windowHeight - revleTop - 1) * 20) / 100
       }%`;
     });
-  }, []);
+    const handleScroll = () => {
+      if (!isScrollTriggered && window.scrollY > window.innerHeight / 2) {
+        setIsScrollTriggered(true);
+
+        // Your code to execute when scroll triggered
+        let charIndex = 0;
+        const interval = setInterval(() => {
+          if (charIndex < textWithHTML.length) {
+            setText((prevText) => prevText + textWithHTML.charAt(charIndex));
+            charIndex++;
+          } else {
+            clearInterval(interval);
+          }
+        }, typingSpeed);
+
+        return () => clearInterval(interval);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrollTriggered]);
 
   return (
     <>
-      <div id="about" className="about_container" ref={z}>
-        <div className="about">
+      <div className="about_container" ref={z}>
+        <div className="about" id="inAbout">
           <div className="h_about">
             <div className="a_title">
               <h1>ABOUT ME</h1>
             </div>
-            <div className="a_details">
-              <p>{">"} Hi,</p>
-              <p>{">"} This is Monirul Islam Soumik</p>
-              <p>
-                {">"} I am a Student, Full-Stack Web Developer and Freelancer.
-              </p>
-              <p>{">"} I can do Frontend, Backend and Database work.</p>
-              <p>{">"} Currently Working and Learning diffrent</p>
-              <p>{">"} things on Web Development and Software Development.</p>
-            </div>
+            <span ref={x}></span>
+            <div
+              className="a_details"
+              dangerouslySetInnerHTML={{ __html: text }}
+            ></div>
           </div>
         </div>
         {/* <div className="a_img">
@@ -60,12 +96,12 @@ const About = () => {
           </a>
         </div>
         <div className="i3">
-          <a href="#a">
+          <a href="https://web.facebook.com/monirul.islam.soumik">
             <i className="fa-brands fa-square-facebook"></i>
           </a>
         </div>
         <div className="i4">
-          <a href="#a">
+          <a href="mailto:monirulislam49007@gmail.com">
             <i className="fa-solid fa-square-envelope"></i>
           </a>
         </div>
