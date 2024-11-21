@@ -8,7 +8,7 @@ const About = ({ isActive }) => {
 
   // window.addEventListener("wheel", (e) => {
   //     if (e.deltaY < 0) {
-  //         if (opacity <= 0) {
+  //         if (opacity <= 0) {ss
   //             setopacity(opacity + 1); 
   //         } 
 
