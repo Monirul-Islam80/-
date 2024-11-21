@@ -22,8 +22,8 @@ const About = ({ isActive }) => {
   <p>> I am a Student, Full-Stack Web Developer and Freelancer.</p>
   <p>> I can do Frontend, Backend and Database work.</p>
   <p>> Currently Working and Learning diffrent things</p>
-  <p>> on Web Development and Software Development.</p>`; // Text with HTML tags
-  const typingSpeed = 100; // Speed of typing in milliseconds
+  <p>> on Web Development and Software Development.</p>`;
+  const typingSpeed = 100;
   useEffect(() => {
     document.getElementById("inAbout").addEventListener("mouseover", () => {
       isActive("n_about");
@@ -42,7 +42,7 @@ const About = ({ isActive }) => {
       if (!isScrollTriggered && window.scrollY > window.innerHeight / 2) {
         setIsScrollTriggered(true);
 
-        // Your code to execute when scroll triggered
+
         let charIndex = 0;
         const interval = setInterval(() => {
           if (charIndex < textWithHTML.length) {
