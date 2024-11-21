@@ -29,7 +29,7 @@ const Contact = ({ isActive }) => {
         id="contact"
         ref={x}
       >
-        <div name="contact" className="container" data-netlify="true" >
+        <div name="contact" className="container" data-netlify="true" netlify>
           <form className="form">
             <h2>Contact Me</h2>
             <div className="inputbox">
