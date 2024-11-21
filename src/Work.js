@@ -22,49 +22,49 @@ export default function Work({ isActive }) {
           <div className="webs">
             <a href="https://realstate-nextjs-delta.vercel.app/">
               <img src={p6} alt={p6} />
-              chack it out
+              check it out
             </a>
           </div>
           <div className="webs">
             <a href="https://majids.netlify.app/">
               <img src={p7} alt={p7} />
-              chack it out
+              check it out
             </a>
           </div>
           <div className="webs">
             <a href="https://monirul-islam80.github.io/ColorCube/">
               <img src={p3} alt={p3} />
-              chack it out
+              check it out
             </a>
           </div>
           <div className="webs">
             <a href="https://monirsopenai.netlify.app/">
               <img src={p2} alt={p2} />
-              chack it out
+              check it out
             </a>
           </div>
           <div className="webs">
             <a href="https://monirul-islam80.github.io/reactone/">
               <img src={p4} alt={p4} />
-              chack it out
+              check it out
             </a>
           </div>
           <div className="webs">
             <a href="https://monirul-islam80.github.io/The-Todo-List/">
               <img src={p8} alt={p8} />
-              chack it out
+              check it out
             </a>
           </div>
           <div className="webs">
             <a href="https://monirul-islam80.github.io/dark.github.io/">
               <img src={p1} alt={p1} />
-              chack it out
+              check it out
             </a>
           </div>
           <div className="webs">
             <a href="https://monirul-islam80.github.io/my-blog/">
               <img src={p5} alt={p5} />
-              chack it out
+              check it out
             </a>
           </div>
         </div>
