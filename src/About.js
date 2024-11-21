@@ -10,7 +10,7 @@ const About = ({ isActive }) => {
   //     if (e.deltaY < 0) {
   //         if (opacity <= 0) {
   //             setopacity(opacity + 1);
-  //         }
+  //         } 
 
   //     } else if (e.deltaY > 0) {
   //         setopacity(opacity - 1);
